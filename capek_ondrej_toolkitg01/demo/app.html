@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CapekOndrejToolkit.App Demo</title>
+
+    <script src="https://cdn.plus4u.net/uu-uu5loaderg01/1.0.0/uu5loaderg01.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.plus4u.net/uu-uu5g05/1.0.0/assets/example-config.js" crossorigin="anonymous"></script>
+    <script>
+      // prettier-ignore
+      Uu5Loader.config({
+        "imports": {
+          "uu5g05": "https://cdn.plus4u.net/uu-uu5g05/1.0.0/uu5g05.min.js",
+          "uu5g05-elements": "https://cdn.plus4u.net/uu-uu5g05/1.0.0/uu5g05-elements.min.js",
+          "uu_gdsg01-unicorn": "https://cdn.plus4u.net/uu-gdsg01/1.0.0/uu_gdsg01-unicorn.min.js",
+          "uu_i18ng01": "https://cdn.plus4u.net/uu-i18ng01/1.0.0/uu_i18ng01.min.js",
+          "capek_ondrej_toolkitg01": "https://cdn.plus4u.net/capek-ondrej-toolkitg01/0.0.0/capek_ondrej_toolkitg01.min.js",
+        },
+      });
+    </script>
+
+    <style>
+      body {
+        padding: 16px 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="renderHere"></div>
+
+    <script type="text/babel">
+      import { Utils, createComponent } from "uu5g05";
+      import CapekOndrejToolkit from "capek_ondrej_toolkitg01";
+
+      const Page = createComponent({
+        render() {
+          return (
+            <main>
+              <h4>Default props</h4>
+              <CapekOndrejToolkit.App />
+            </main>
+          );
+        },
+      });
+
+      Utils.Dom.render(<Page />, document.getElementById("renderHere"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lena Visage</title>
+
+    <script src="https://cdn.plus4u.net/uu-uu5loaderg01/1.0.0/uu5loaderg01.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.plus4u.net/uu-plus4u5g02/1.0.0/assets/example-config.js" crossorigin="anonymous"></script>
+    <script>
+      Uu5Loader.config({
+        imports: {
+          "oc_lenavisageg01": "oc_lenavisageg01.min.js"
+        }
+      });
+
+      var UU5 = {
+        Environment: {
+          allowStatistics: false,
+          uu_app_oidc_primary_provider: "oidcg02",
+          uu_app_oidc_providers_oidcg02_client_id: "c3febbae567a4f5a80c8bf86a7d9f73c",
+          uu_app_oidc_redirect_uri: "https://cdn.plus4u.net/beta/capek-ondrej-toolkitg01/1.0.0/controllers/callback.html",
+          // uu_app_oidc_redirect_uri: new URL('../controllers/callback.html', location.href).href,
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="uu5"></div>
+
+    <script type="text/babel">
+      import { Utils } from "uu5g05";
+      import OcLenaVisage from "oc_lenavisageg01";
+
+      Utils.Dom.render(<OcLenaVisage.App />, document.getElementById("uu5"));
+    </script>
+  </body>
+</html>

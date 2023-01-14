@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OcLenaVisage.App Demo</title>
+
+    <script src="https://cdn.plus4u.net/uu-uu5loaderg01/1.0.0/uu5loaderg01.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.plus4u.net/uu-plus4u5g02/1.0.0/assets/example-config.js" crossorigin="anonymous"></script>
+    <script>
+      // prettier-ignore
+      Uu5Loader.config({
+        "imports": {
+          "oc_lenavisageg01": "https://cdn.plus4u.net/beta/capek-ondrej-toolkitg01/1.0.0/oc_lenavisageg01.js"
+        },
+      });
+
+      var uu5Environment = {
+        uu5g05_libraryStatsDisabled: true
+      }
+    </script>
+  </head>
+  <body>
+    <div id="uu5"></div>
+
+    <script type="text/babel">
+      import { Utils } from "uu5g05";
+      import OcLenaVisage from "oc_lenavisageg01";
+
+      Utils.Dom.render(<OcLenaVisage.App />, document.getElementById("uu5"));
+    </script>
+  </body>
+</html>

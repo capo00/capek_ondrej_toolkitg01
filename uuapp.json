@@ -1,0 +1,30 @@
+{
+  "product": "capek_ondrej_toolkitg01",
+  "version": "0.1.0",
+  "license": "License Commercial",
+  "description": {
+    "en": "",
+    "cs": ""
+  },
+  "docUri": "https://uuapp.plus4u.net/uu-myterritory-maing01/77869331ed894285b9a9de3c795bc5ea/userGate/clubDetail?id=5ef50fc13e8635002dc22398",
+  "flsUri": "https://uuapp.plus4u.net/uu-myterritory-maing01/77869331ed894285b9a9de3c795bc5ea/userGate/clubDetail?id=5ef50fc13e8635002dc22398",
+  "slsUri": "",
+  "imageUri": "https://uuapp.plus4u.net/uu-myterritory-maing01/77869331ed894285b9a9de3c795bc5ea/userGate/clubDetail?id=5ef50fc13e8635002dc22398",
+  "devkit": {
+    "development": {
+      "appBoxLocationUri": "ues:UU-BT:CAPEK.ONDREJ.TOOLKIT/APPBOX",
+      "appDeploymentUri": null,
+      "resourcePoolUri": "ues:UUHUMANINTERFACEFAMILY-BT:FAMILY_UUHUMANINTERFACE_FAT_RESOURCEPOOL_AWE"
+    }
+  },
+  "capek_ondrej_toolkitg01": {
+    "namespace": "CapekOndrejToolkit",
+    "sourceUri": "https://cdn.plus4u.net/capek-ondrej-toolkitg01/%s/capek_ondrej_toolkitg01.min.js",
+    "componentList": []
+  },
+  "oc_lenavisageg01": {
+    "namespace": "OcLenaVisage",
+    "sourceUri": "https://cdn.plus4u.net/oc-lenavisageg01/%s/oc_lenavisageg01.min.js",
+    "componentList": []
+  }
+}
