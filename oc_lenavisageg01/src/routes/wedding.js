@@ -11,7 +11,6 @@ import Tools from "../model/tools.js";
 import CustomerInput from "../services/customer-input.js";
 
 //@@viewOff:imports
-
 function getGuestRow(i, value, wedding, setGuests) {
   return (
     <Uu5Forms.Checkboxes
@@ -43,14 +42,15 @@ const MODAL_HEADER = {
 function getPayment(order) {
   return (
     <>
-      <div>{order.getCustomer().name}</div>
-      <div><Uu5Elements.DateTime value={order.getWeddingDate()} /></div>
+      <div>{order.getCustomer()?.name}</div>
+      <div>
+        <Uu5Elements.DateTime value={order.getWeddingDate()} />
+      </div>
 
       {Confirmation.getServices(order, order.getSummary().sum)}
     </>
   );
 }
-
 function getCreateOrUpdate(config, guests, setGuests, updatedItem) {
   const { data: item } = updatedItem || {};
   return (
@@ -113,18 +113,10 @@ const FOOTER = {
     );
   },
   create: () => {
-    return (
-      <Uu5Forms.SubmitButton colorScheme="pink">
-        Vytvořit
-      </Uu5Forms.SubmitButton>
-    );
+    return <Uu5Forms.SubmitButton colorScheme="pink">Vytvořit</Uu5Forms.SubmitButton>;
   },
   update: () => {
-    return (
-      <Uu5Forms.SubmitButton colorScheme="pink">
-        Upravit
-      </Uu5Forms.SubmitButton>
-    );
+    return <Uu5Forms.SubmitButton colorScheme="pink">Upravit</Uu5Forms.SubmitButton>;
   },
 };
 
@@ -215,8 +207,16 @@ export const Wedding = createVisualComponent({
                 <div className={Config.Css.css({ display: "grid", gridTemplateColumns: "1fr 1fr" })}>
                   {item.weddingDate ? <Uu5Elements.DateTime value={item.weddingDate} /> : ""}
                   <span className={Config.Css.css({ justifySelf: "end" })}>
-                    {item.deposit ? <><Uu5Elements.Number value={item.deposit} /> / </> : null}
-                    {<b><Uu5Elements.Number value={item.sum} currency="CZK" maxDecimalDigits={0} /></b>}
+                    {item.deposit ? (
+                      <>
+                        <Uu5Elements.Number value={item.deposit} /> /{" "}
+                      </>
+                    ) : null}
+                    {
+                      <b>
+                        <Uu5Elements.Number value={item.sum} currency="CZK" maxDecimalDigits={0} />
+                      </b>
+                    }
                   </span>
                 </div>
               </Uu5Elements.Tile>
@@ -280,7 +280,11 @@ export const Wedding = createVisualComponent({
             header={MODAL_HEADER[modalState]}
             footer={FOOTER[modalState]?.(order, updatedItem?.handlerMap?.update, handleClose)}
           >
-            {modalState ? modalState === "payment" ? getPayment(order) : getCreateOrUpdate(config, guests, setGuests, updatedItem) : null}
+            {modalState
+              ? modalState === "payment"
+                ? getPayment(order)
+                : getCreateOrUpdate(config, guests, setGuests, updatedItem)
+              : null}
           </Uu5Elements.Modal>
         </Uu5Forms.Form.Provider>
       </Uu5Elements.Block>
